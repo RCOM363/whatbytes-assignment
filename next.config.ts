@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "photos.wellfound.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
+      },
     ],
   },
 };

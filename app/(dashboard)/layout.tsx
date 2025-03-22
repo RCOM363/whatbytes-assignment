@@ -13,7 +13,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
         <div className="hidden lg:block lg:basis-[16%]">
           <Sidebar />
         </div>
-        <div className="basis-full lg:basis-[80%]">{children}</div>
+        <div className="basis-full lg:basis-[80%] p-10">{children}</div>
       </div>
     </div>
   );
