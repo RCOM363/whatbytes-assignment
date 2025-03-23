@@ -9,11 +9,11 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
       <div>
         <Navbar />
       </div>
-      <div className="h-[87vh] flex">
+      <div className="w-full lg:h-[87vh] flex justify-center">
         <div className="hidden lg:block lg:basis-[16%]">
           <Sidebar />
         </div>
-        <div className="basis-full lg:basis-[80%] p-10">{children}</div>
+        <div className="w-full flex justify-center lg:basis-[80%] p-5 lg:p-10">{children}</div>
       </div>
     </div>
   );
