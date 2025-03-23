@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
+import ComparisonGraph from "@/components/ComparisonGraph";
+
 
 function SkillTest() {
   const htmlLogo =
@@ -69,7 +72,8 @@ function SkillTest() {
               </div>
             </div>
           </div>
-          <div>Graph</div>
+          {/* comparison graph */}
+          <ComparisonGraph/>
         </div>
         <div className="w-[80%] lg:basis-[35%]">
           <div>Syllabus</div>
