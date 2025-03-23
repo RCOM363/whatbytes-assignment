@@ -27,6 +27,7 @@ function Navbar() {
   return (
     <div className="w-full h-15 md:h-25 lg:h-25  flex justify-center items-center border-b-solid border-b-2">
       <div className="w-[95%] lg:w-[97%] flex justify-between items-center">
+        {/* logo */}
         <div className="w-[38%] lg:w-[14%] md:w-[25%] flex items-center gap-1">
           <Image
             src={logo}
@@ -36,6 +37,7 @@ function Navbar() {
             quality={100}
             layout="responsive"
           />
+          {/* menu for smaller devices */}
           <div className="h-full lg:hidden">
             <Drawer>
               <DrawerTrigger>
@@ -93,6 +95,7 @@ function Navbar() {
             </Drawer>
           </div>
         </div>
+        {/* profile section */}
         <div className="w-30 lg:w-42 md:w-40 lg:h-12 md:h-8 flex justify-evenly items-center border-solid border-2 rounded-md">
           <div className="w-[15%]">
             <Image
