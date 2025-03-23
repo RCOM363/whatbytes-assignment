@@ -9,6 +9,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import { useScore } from "../app/context/ScoresProvider";
 
 const chartData = [
   { name: "Correct Answers", value: 10, fill: "#2b7fff" },
@@ -27,16 +28,18 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 function QuestionAnalysis() {
+  const { currentScore } = useScore();
   return (
     <div className="w-full flex flex-col p-5 border-solid border-2 rounded-lg">
       <div className="flex justify-between items-center">
         <h3 className="font-bold">Question Analysis</h3>
-        <span className="text-blue-500 font-bold">10/15</span>
+        <span className="text-blue-500 font-bold">{currentScore}/15</span>
       </div>
       <span className="text-gray-500">
-        <b>You scored 10 question correct out of 15.</b> However it still needs
-        some improvements
+        <b>You scored {currentScore} question correct out of 15.</b> However it
+        still needs some improvements
       </span>
+      {/* donut chart */}
       <div>
         <ChartContainer
           config={chartConfig}
@@ -67,7 +70,7 @@ function QuestionAnalysis() {
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
+                          className="fill-foreground text-5xl font-bold"
                         >
                           🎯
                         </tspan>

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
 
@@ -6,6 +8,7 @@ import {
   ChartContainer,
   ChartTooltip,
 } from "@/components/ui/chart";
+import { useScore } from "@/app/context/ScoresProvider";
 
 const chartData = [
   { percentile: 0, numberOfStudents: 5 },
@@ -36,13 +39,15 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 function ComparisonGraph() {
+  const { percentile } = useScore();
   return (
     <div className="w-full flex flex-col p-5 border-solid border-2 rounded-lg">
       <div>
         <h3 className="font-bold">Comparison Graph</h3>
         <div className="flex justify-between items-center">
           <p className="text-gray-500">
-            <b>You scored 30% percentile</b> which is lower than the average 72% of all
+            <b>You scored {percentile}% percentile</b> which is{" "}
+            {percentile < 72 ? "lower" : "greater"} than the average 72% of all
             the engineers who took this assignment
           </p>
           <div className="basis-[10%] bg-gray-100 border-2 rounded-full text-2xl lg:p-2">
@@ -50,6 +55,7 @@ function ComparisonGraph() {
           </div>
         </div>
       </div>
+      {/* line chart */}
       <div className="mt-5">
         <ChartContainer config={chartConfig}>
           <LineChart
