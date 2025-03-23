@@ -9,10 +9,19 @@ import {
 
 const chartData = [
   { percentile: 0, numberOfStudents: 5 },
-  { percentile: 25, numberOfStudents: 15 },
-  { percentile: 50, numberOfStudents: 30 },
-  { percentile: 75, numberOfStudents: 20 },
-  { percentile: 100, numberOfStudents: 10 },
+  { percentile: 12, numberOfStudents: 8 },
+  { percentile: 20, numberOfStudents: 10 },
+  { percentile: 25, numberOfStudents: 10 },
+  { percentile: 30, numberOfStudents: 15 },
+  { percentile: 30, numberOfStudents: 18 },
+  { percentile: 40, numberOfStudents: 25 },
+  { percentile: 50, numberOfStudents: 35 },
+  { percentile: 55, numberOfStudents: 25 },
+  { percentile: 60, numberOfStudents: 15 },
+  { percentile: 70, numberOfStudents: 10 },
+  { percentile: 75, numberOfStudents: 10 },
+  { percentile: 80, numberOfStudents: 8 },
+  { percentile: 100, numberOfStudents: 5 },
 ];
 
 const chartConfig = {
@@ -31,12 +40,17 @@ function ComparisonGraph() {
     <div className="w-full flex flex-col p-5 border-solid border-2 rounded-lg">
       <div>
         <h3 className="font-bold">Comparison Graph</h3>
-        <p>
-          You scored 30% percentile which is lower than the average 72% of all
-          the engineers who took this assignment
-        </p>
+        <div className="flex justify-between items-center">
+          <p className="text-gray-500">
+            <b>You scored 30% percentile</b> which is lower than the average 72% of all
+            the engineers who took this assignment
+          </p>
+          <div className="basis-[10%] bg-gray-100 border-2 rounded-full text-2xl lg:p-2">
+            📈
+          </div>
+        </div>
       </div>
-      <div>
+      <div className="mt-5">
         <ChartContainer config={chartConfig}>
           <LineChart
             accessibilityLayer

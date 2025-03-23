@@ -4,14 +4,15 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import ComparisonGraph from "@/components/ComparisonGraph";
-
+import SyllabusAnalysis from "@/components/SyllabusAnalysis";
+import QuestionAnalysis from "@/components/QuestionAnalysis";
 
 function SkillTest() {
   const htmlLogo =
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg";
   return (
     <div className="w-full lg:w-full h-full flex flex-col items-center lg:items-start">
-      <h1 className="text-2xl lg:text-sm">Skill Test</h1>
+      <h1 className="text-2xl lg:text-md">Skill Test</h1>
       <div className="w-full flex justify-center lg:justify-start items-start flex-wrap gap-10 lg:mt-5 p-5 lg:p-0">
         <div className="w-full lg:basis-[55%] flex flex-col items-center gap-5">
           {/* HTML section */}
@@ -73,11 +74,11 @@ function SkillTest() {
             </div>
           </div>
           {/* comparison graph */}
-          <ComparisonGraph/>
+          <ComparisonGraph />
         </div>
-        <div className="w-[80%] lg:basis-[35%]">
-          <div>Syllabus</div>
-          <div>QA</div>
+        <div className="w-full lg:basis-[39%] flex flex-col gap-5">
+          <SyllabusAnalysis />
+          <QuestionAnalysis />
         </div>
       </div>
     </div>
